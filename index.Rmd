@@ -5,77 +5,54 @@ output: html_document
 
 ### Introduction
 
-An introduction of the data and a description of the trends/books/items you are choosing to analyze (and why!)
+The Seattle Public Library is a popular institution that serves as a cultural and educational hub for the city of Seattle. As one of the largest public libraries in the United States, it provides residents with access to a vast collection of books, media, and online resources to serve people expand their knowledge. Its distinctive architecture and numerous branches spread throughout the city, the library has become an iconic symbol of Seattle's commitment to education and lifelong learning for the public. From its innovative programs for children and families to its extensive collection of rare books and archives, its one of the best libraries in the nation by its catalog. 
+The data I got from the SPL dataset, was really mind blowing. they really kept al the history int heir database and opened an opportunity for the public to explore the statistics form it and know its popularity and so on.So here I will be using some of the information from only the year 2022. I chose only 2022 because it is really important from so many perspectives. We had pandemic recovery, first summer after covid, more technologies due to the pandemic, more online preference than inperson for learning. I will explain these at the end of the paragraph which will be summary. 
+
 
 ### Summary Information
 
 
-```{r, echo = FALSE, messages = FALSE, warning = FALSE, readLines("summary.R") }
+```{r, echo = FALSE, messages = FALSE, warning = FALSE}
 source("summary.R")
-plot1
-```
-
-Write a summary paragraph of findings that includes the 5 values calculated from your summary information R script
-
-These will likely be calculated using your DPLYR skills, answering questions such as:
-
-- What is the average number of checkouts for each item?
-- What is the month or year with the most/least checkouts for a book that you're interested in?
-- What is the month or year with the most/least checkouts for ebooks?
-- How has the number of print book checkouts changed over time?
-
-```{r, echo = FALSE, messages = FALSE, warning = FALSE, readLines("chart0.R") }
-source("chart0.R")
 plot0
 ```
 
-
-
-Feel free to calculate and report values that you find relevant.
+Based on the analysis of Seattle Public Library's checkouts data, it was found that the average number of checkouts per item during the year 2022 was `r Ave_checkouts` which indicates a strong demand for library materials. The month with the most checkouts for the book category of interest was "The Third Sister" which was `r book_checkouts` months of teh calendar year during 2022. In terms of e-books, the month with the most checkouts was `r most_ebook_checkouts`th month of the year. Furthermore, an analysis of the trend of print book checkouts over time revealed that there has been a gradual increase in the number of checkouts from teh summer 2022 which is after the pandemic. The trend is illustrated in the plot which shows a steady decline in checkouts over the year of 2022. 
 
 ### The Dataset
 
 Seattle public library gathered and published the data. I took the data for every single counts for each object during 2022. I took the records of these parameters (UsageClass,CheckoutType,MaterialType, CheckoutYear, CheckoutMonth, Checkouts, Title).
 There are so many types we can see like type of meterial, checkout type recording the data of checkout for reach items based on time. There are so many possibilities with the data.
-the data was collected based on the machine readout by SPL system into its database. teh data was collected to know the popularity of the books and teh interest of readin in seattle neighorhood and so on.
-Since SPL got a lot of branches on seattle so its importnt to keep track all the books. Spl did an amazing job by putting the Title here. which really helps to give the reader the suggestion to 
+the data was collected based on the machine readout by SPL system into its database. teh data was collected to know the popularity of the books and teh interest of readin in seattle neighborhood and so on.
+Since SPL got a lot of branches on Seattle so its important to keep track all the books. SPL did an amazing job by putting the Title here. which really helps to give the reader the suggestion to 
 read the popular book and keep up with the modern knowledge.  
 
-The limitation I would say is the number of new people are signing up to teh SPL database which would would also solve so many otehr problems in our society. And on the other hand I see the format was aweful for thr publication year. I wanted ot work on the publication year and the currect year trend to show the increase of new writers that got place in SPL database. but could not make that happen since the publishing dat e was inconsistant. 
+The limitation I would say is the number of new people are signing up to the SPL database which would would also solve so many otehr problems in our society. And on the other hand I see the format was awful for the publication year. I wanted ot work on the publication year and the current year trend to show the increase of new writers that got place in SPL database. but could not make that happen since the publishing date was inconsistant. The datasets provided by the SPL only include data from library users who choose to check out materials or attend programs. This means that the data may not be representative of the entire community, and may skew towards certain demographics or interests. The datasets may not include all relevant information, or may be missing data for certain periods of time. This can make it difficult to draw conclusions or make comparisons over time.
 
 
-
-- Who collected/published the data?  
-- What are the parameters of the data (dates, number of checkouts, kinds of books, etc.)?
-- How was the data collected or generated?  
-- Why was the data collected?  
-- What, if any, ethical questions do you need to consider when working with this data?  
-- What are possible limitations or problems with this data?   (at least 200 words)
-
-
-### First Trends Over Time Chart
+### Analysis by book type
 
 Include a chart. Make sure to describe why you included the chart, and what patterns emerged
 Here I tried to show multiple trends which focused on Hardcover/physical books, audio books, ebooks and sound discs. From the data we can see the physical books are more popular than all other items. Then ebook are closer to the top trend. for these they changed the sloped during the end of the year, which is interesting. Then comes the audiobooks which is less popular than the other because people are more towards reading books and visual is more effective than audio. and at the end which is the  least popular inthe chart because normal people does not need that much and mostly professionals use to give presentation or making video. 
 
-```{r, echo = FALSE, messages = FALSE, warning = FALSE, readLines("chart1.R") }
+```{r, echo = FALSE, messages = FALSE, warning = FALSE }
 source("chart1.R")
 plot1
 ```
 
 ### Second Trends Over Time Chart
 
-Include a chart. Make sure to describe why you included the chart, and what patterns emerged
+Here in this chart I tried to show the trends on the physics and digital books. My goal was to show the needs of physical and electronic books. We know digital books are easier to get but physical book are helpful to feel the book and make connection between the book and reader. During pandemic(earlier this year), the digital books are pretty popular but from the summer it started to come back to its pace with the physical books. The only reason for that was digital copy is easier to read but it also depends on the medium(i.e phone, computer, tablet or screen). Most people doesnt want to spend more time on screen and so tehre are still some people whcih was more than the digital books all over the year. And after summer the digital books started losing its popularity and physical books getting those audience/borrowers. 
 
-```{r, echo = FALSE, messages = FALSE, warning = FALSE, readLines("chart2.R") }
+```{r, echo = FALSE, messages = FALSE, warning = FALSE }
 source("chart2.R")
 plot2
 ```
 
-### My choice 
+### My choice (Most checked out items checkout each month)
 Here I tried to plot the most checked out book in each month during the year of 2022. I looked over the most checked out book/item each month and then tried to to plot that over time. As we can see there, the most checkout numbers of the item peaks during October and the item is headphone. teh most checked out items in this data are headphones except one of the books during July. The most numbers are reasonlable during the time becaseu thats when schools/college starts and most of the students need headphones. Also on the other hand, People come back from summer vacation. If we summerize the entire data, We can say in the bebeginning of hte year people were recovering from covid pandemic and started borrowing books/items form SPL. Also SPL started reopening all the branched after the staff shortages due to the pandemic.  
 
-```{r, echo = FALSE, messages = FALSE, warning = FALSE, readLines("chart3.R") }
+```{r, echo = FALSE, messages = FALSE, warning = FALSE }
 source("chart3.R")
 plot3
 ```

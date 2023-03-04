@@ -27,5 +27,5 @@ plot3_df <- data.frame(x1 = checkout_Month, y1 = max_checkouts_each_month)
 
 plot3 <- ggplot(plot3_df, aes(x=x1, y=y1)) +
   geom_line(linewidth = 1,color="red")+
-  labs(title = "Most individual checkout checkouts over time", x = "Month", y = "Total checkout")
+  labs(title = "Most individual item checkout checkouts each month", x = "Month", y = "Total checkout")
 plot3
