@@ -9,6 +9,12 @@ An introduction of the data and a description of the trends/books/items you are 
 
 ### Summary Information
 
+
+```{r, echo = FALSE, messages = FALSE, warning = FALSE, readLines("summary.R") }
+source("summary.R")
+plot1
+```
+
 Write a summary paragraph of findings that includes the 5 values calculated from your summary information R script
 
 These will likely be calculated using your DPLYR skills, answering questions such as:
@@ -18,9 +24,26 @@ These will likely be calculated using your DPLYR skills, answering questions suc
 - What is the month or year with the most/least checkouts for ebooks?
 - How has the number of print book checkouts changed over time?
 
+```{r, echo = FALSE, messages = FALSE, warning = FALSE, readLines("chart0.R") }
+source("chart0.R")
+plot0
+```
+
+
+
 Feel free to calculate and report values that you find relevant.
 
 ### The Dataset
+
+Seattle public library gathered and published the data. I took the data for every single counts for each object during 2022. I took the records of these parameters (UsageClass,CheckoutType,MaterialType, CheckoutYear, CheckoutMonth, Checkouts, Title).
+There are so many types we can see like type of meterial, checkout type recording the data of checkout for reach items based on time. There are so many possibilities with the data.
+the data was collected based on the machine readout by SPL system into its database. teh data was collected to know the popularity of the books and teh interest of readin in seattle neighorhood and so on.
+Since SPL got a lot of branches on seattle so its importnt to keep track all the books. Spl did an amazing job by putting the Title here. which really helps to give the reader the suggestion to 
+read the popular book and keep up with the modern knowledge.  
+
+The limitation I would say is the number of new people are signing up to teh SPL database which would would also solve so many otehr problems in our society. And on the other hand I see the format was aweful for thr publication year. I wanted ot work on the publication year and the currect year trend to show the increase of new writers that got place in SPL database. but could not make that happen since the publishing dat e was inconsistant. 
+
+
 
 - Who collected/published the data?  
 - What are the parameters of the data (dates, number of checkouts, kinds of books, etc.)?
@@ -33,54 +56,28 @@ Feel free to calculate and report values that you find relevant.
 ### First Trends Over Time Chart
 
 Include a chart. Make sure to describe why you included the chart, and what patterns emerged
+Here I tried to show multiple trends which focused on Hardcover/physical books, audio books, ebooks and sound discs. From the data we can see the physical books are more popular than all other items. Then ebook are closer to the top trend. for these they changed the sloped during the end of the year, which is interesting. Then comes the audiobooks which is less popular than the other because people are more towards reading books and visual is more effective than audio. and at the end which is the  least popular inthe chart because normal people does not need that much and mostly professionals use to give presentation or making video. 
 
-The first chart that you will create and include will show the trend over time of your variable/topic/interest. Think carefully about what you want to communicate to your user (you may have to find relevant trends in the dataset first!). Here are some requirements to help guide your design:
-
-- Show more than one, but fewer than ~10 trends
-  - For example, two books, or 5 different mediums
-- You must have clear x and y axis labels
-- The chart needs a clear title 
-- You need a legend for your different line colors and a clear - legend title
-In your .Rmd file, make sure to describe why you included the chart, and what patterns emerged
-
-When we say "clear" or "human readable" titles and labels, that means that you should not just display the variable name.
-
-Here's an example of how to run an R script inside an RMarkdown file:
-
-``````{r, echo = FALSE, warning = FALSE, code = readLines("chart1_example.R")}
+```{r, echo = FALSE, messages = FALSE, warning = FALSE, readLines("chart1.R") }
+source("chart1.R")
+plot1
 ```
 
 ### Second Trends Over Time Chart
 
 Include a chart. Make sure to describe why you included the chart, and what patterns emerged
 
-The second chart that you will create and include will show another trend over time of your variable/topic/interest. Think carefully about what you want to communicate to your user (you may have to find relevant trends in the dataset first!). Here are some requirements to help guide your design:
-
-- Show more than one, but fewer than ~10 trends
-  - For example, two books, or 5 different mediums
-- You must have clear x and y axis labels
-- The chart needs a clear title 
-- You need a legend for your different line colors and a clear - legend title
-In your .Rmd file, make sure to describe why you included the chart, and what patterns emerged
-
-When we say "clear" or "human readable" titles and labels, that means that you should not just display the variable name.
-
-Here's an example of how to run an R script inside an RMarkdown file:
-
-``````{r, echo = FALSE, code = readLines("chart2_example.R")}
+```{r, echo = FALSE, messages = FALSE, warning = FALSE, readLines("chart2.R") }
+source("chart2.R")
+plot2
 ```
 
-### Your Choice
+### My choice 
+Here I tried to plot the most checked out book in each month during the year of 2022. I looked over the most checked out book/item each month and then tried to to plot that over time. As we can see there, the most checkout numbers of the item peaks during October and the item is headphone. teh most checked out items in this data are headphones except one of the books during July. The most numbers are reasonlable during the time becaseu thats when schools/college starts and most of the students need headphones. Also on the other hand, People come back from summer vacation. If we summerize the entire data, We can say in the bebeginning of hte year people were recovering from covid pandemic and started borrowing books/items form SPL. Also SPL started reopening all the branched after the staff shortages due to the pandemic.  
 
-The last chart is up to you. It could be a line plot, scatter plot, histogram, bar plot, stacked bar plot, and more. Here are some requirements to help guide your design:
-
-- You must have clear x and y axis labels
-- The chart needs a clear title 
-- You need a legend for your different line colors and a clear legend title
-
-Here's an example of how to run an R script inside an RMarkdown file:
-
-``````{r, echo = FALSE, code = readLines("chart2_example.R")}
+```{r, echo = FALSE, messages = FALSE, warning = FALSE, readLines("chart3.R") }
+source("chart3.R")
+plot3
 ```
 
 

@@ -24,7 +24,7 @@ checkout_Month <- small_22_23 %>%
 
 #
 #
-plot1_df <- data.frame(x1 = checkout_Month, y1 = total_checkout_each_month)
-plot1 <- ggplot(data = plot1_df, aes(x=x1, y = y1)) + geom_col(fill="blue")+labs(title="Total book checkouts each month in 2022",
-                                                                                 x ="Month", y = "Total checkout")
-plot1
+plot0_df <- data.frame(x1 = checkout_Month, y1 = total_checkout_each_month)
+plot0 <- ggplot(data = plot1_df, aes(x=x1, y = y1)) + geom_line(fill="blue")+labs(title="Total book checkouts each month in 2022",
+                                                                           x ="Month", y = "Total checkout")
+plot0
