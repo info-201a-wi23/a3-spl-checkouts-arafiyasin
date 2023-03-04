@@ -20,9 +20,8 @@ checkout_Month <- small_22_23 %>%
   summarize(total_checkouts = sum(Checkouts)) %>% 
   pull(CheckoutMonth)
 
-?ggplot
 
-#
+#plot-----------------------------------
 #
 plot0_df <- data.frame(x1 = checkout_Month, y1 = total_checkout_each_month)
 plot0 <- ggplot(data = plot0_df, aes(x=x1, y = y1)) + geom_col(fill="blue")+labs(title="Total book checkouts each month in 2022",
@@ -39,7 +38,7 @@ Ave_checkouts<- small_22_23 %>%
   summarize(mean(Checkouts))
 
 #--------------------------
-#month max on my book - done
+#month max on my book 
 book_checkouts <- small_22_23 %>%
   filter(Title== "The Third Sister")%>%
   group_by(CheckoutMonth) %>%
@@ -57,3 +56,17 @@ most_ebook_checkouts <- small_22_23 %>%
   summarize(total_checkouts = sum(Checkouts)) %>% 
   filter(total_checkouts ==  max(total_checkouts)) %>% 
   pull(CheckoutMonth)
+
+
+
+#summarize the table
+horizon_checkouts<- small_22_23 %>%
+  filter(CheckoutType == "Horizon") %>%
+  summarize(total_checkouts = sum(Checkouts)) %>% 
+  pull(total_checkouts) 
+  
+
+OverDrive_checkouts<- small_22_23 %>%
+  filter(CheckoutType == "OverDrive") %>%
+  summarize(total_checkouts = sum(Checkouts)) %>% 
+  pull(total_checkouts) 
